@@ -261,9 +261,18 @@ public class ThemePark {
         Scanner n = new Scanner(System.in);
         System.out.println("\nUh Oh! Looks like employee "+ Employees[rand].getPerson() + " got in an argument with a customer, please fire him!\nType '"+ Employees[rand].getPerson()+"' to fire him/her. **Case Sensitive**");
         String name = n.nextLine();
-
-        int ele = c.getEmployeeIndex(name, Employees);
-        myCustomers = c.addPerson(ele, myCustomers, Employees);
+        int ele = 0;
+        boolean tf = false;
+        while(!tf) { //Error Testing
+            try {
+                ele = c.getEmployeeIndex(name, Employees);
+                myCustomers = c.addPerson(ele, myCustomers, Employees);
+                tf = true;
+            } catch (ArrayIndexOutOfBoundsException a) {
+                System.out.println("\nEmployee " + "doesnt exist, please enter a valid employee.");
+            }
+            name = n.nextLine();
+        }
         Employees = t.fireEmployee(Employees[ele], Employees);
         //Although the var Employees is never used again, it could serve as more functionality
         //if the program were to continue. The Employee object array is a copy of the old one,
