@@ -6,10 +6,9 @@ ThemePark is a Java application that simulates the operations of a theme park. I
 
 To run the ThemePark application, you need to have Java installed on your machine. Follow these steps to get started:
 
-1. Clone the repository to your local machine using the following command:
-git clone https://github.com/bdunaway75/ThemePark.git
+1. Clone the repository to your local machine using the following command: git clone https://github.com/bdunaway75/ThemePark.git
 2. Navigate to the project directory: cd ThemePark 
-3. Compile the Java source files:
+3. Compile the Java source files: javac*.java
 4. Run the application: java ThemePark
 
 
